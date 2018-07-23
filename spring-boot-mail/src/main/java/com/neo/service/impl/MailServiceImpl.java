@@ -127,6 +127,7 @@ public class MailServiceImpl implements MailService{
             helper.setText(content, true);
 
             FileSystemResource res = new FileSystemResource(new File(rscPath));
+            //添加内联资源，一个id对应一个资源，最终通过id来找到该资源
             helper.addInline(rscId, res);
 
             mailSender.send(message);
